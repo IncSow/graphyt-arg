@@ -7,9 +7,7 @@ import FileBrowser from "@/components/fileBrowser/FileBrowser";
 export default function Home() {
   return (
 <>
-<Box>
-  <h1>Ash</h1>
-</Box>
+
 
 <FileBrowser />
   
