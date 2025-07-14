@@ -12,7 +12,6 @@ export default function FileBrowser(props) {
     console.log(fileList)
 
     return (
-        // Remove margin from Box component
         <div style={{margin: 0, padding: 0, width: '100vw', height: '80vh', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center'}}>
             <div className={styles.header}>
               <ReturnElement link="/" />
