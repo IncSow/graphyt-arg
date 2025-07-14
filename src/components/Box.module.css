@@ -1,0 +1,8 @@
+.terminalBox{
+  border-color: var(--terminal-green);
+  border-width: 1px;
+  padding: 1vw 1vh;
+  max-width: 80vw;
+  max-height: 80vh;
+  background-color: black;
+}

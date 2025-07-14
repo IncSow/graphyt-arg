@@ -1,0 +1,21 @@
+.returnLink{
+    display: flex;
+    align-items: center;
+}
+
+.header{
+    display: flex;
+    font-size: 3rem;
+    width: 70%;
+}
+
+.header span{
+    display: flex;
+    align-items: end;
+    margin-left: 25%;
+    font-weight: bold;
+}
+
+.fileListElement{
+    flex: 1;
+}

@@ -1,0 +1,96 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --terminal-green: #62FF00;
+  --terminal-dark-green: #00F952;
+  --background-dark-green: #0C1E00;
+  --swag-purple: #A017FC;
+}
+
+@font-face {
+  font-family: 'terminal-grotesque';
+  src: url('/fonts/terminal-grotesque.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  /* background: var(--background); */
+  /* background-image: url("/background.webp"); */
+  background-image: url('/background.webp');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  color: var(--foreground);
+  font-family: var(--font-terminal-grotesque);
+  min-height: 100vh;
+}
+
+
+*{
+  font-family: var(--font-terminal-grotesque);
+}
+
+
+.glowingText{
+  color: black;
+  -webkit-text-stroke: 1px var(--terminal-green);
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+.glowingText.active{
+  -webkit-text-stroke: 1px var(--swag-purple);
+  animation: active-glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+0% {
+text-shadow: 1px 1px 2px var(--terminal-green);
+}
+100% {
+text-shadow: 1px 1px 10px var(--terminal-dark-green);
+}
+}
+
+@keyframes active-glow {
+0% {
+text-shadow: 1px 1px 2px var(--swag-purple);
+}
+100% {
+text-shadow: 1px 1px 10px var(--swag-purple);
+}
+
+
+}
+.big-text{
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.centered-text{
+  text-align: center;
+}
+
+.centered{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

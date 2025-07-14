@@ -1,0 +1,11 @@
+.folder{
+    filter: drop-shadow(-15px -25px 16px green);
+    transition: 2s cubic-bezier(0.075, 0.82, 0.165, 1)
+
+}
+
+.folder:hover{
+  /* filter: drop-shadow(-10px -10px 8px red); */
+  filter: drop-shadow(-10px 10px 8px red);
+
+}
