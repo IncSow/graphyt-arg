@@ -2,9 +2,9 @@
 import clsx from 'clsx';
 import styles from './Box.module.css'
 export default function Box(props) {
-    const {children, className, style} = props
+    const {children, className, style, onClick} = props
   return (
-   <div style={style} className={clsx(styles.terminalBox, className)}>
+   <div onClick={onClick} style={style} className={clsx(styles.terminalBox, className)}>
     {children}
    </div>
 

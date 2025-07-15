@@ -11,8 +11,8 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-// app/layout.js or wherever appropriate
 import localFont from 'next/font/local'
+import MobileBlocker from "@/components/MobileBlocker";
 
 const terminalGrotesque = localFont({
   src: '../../fonts/terminal-grotesque.ttf', // adjust the path if needed
@@ -28,7 +28,13 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={terminalGrotesque.variable}>
-      <body>{children}</body>
+      
+      <body>
+        <MobileBlocker>
+         {children}
+        </MobileBlocker>
+
+        </body>
     </html>
   )
 }
