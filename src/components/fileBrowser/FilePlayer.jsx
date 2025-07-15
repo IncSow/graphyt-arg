@@ -15,15 +15,16 @@ export default function FilePlayer(props) {
         )}
 
         {fileType === 'video' && (
-             <video
-      controls
-      width="100%"
-      height="100%"
-      style={{ borderRadius: '8px', backgroundColor: '#000' }}
-    >
-      <source src={filePath} type="video/mp4" />
-      Your browser does not support the video tag.
-    </video>)}
+            <iframe 
+              width="100%" 
+              height="100%" 
+              src={filePath} 
+              title="YouTube video player" 
+              frameborder="0" 
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerPolicy="strict-origin-when-cross-origin" 
+              allowFullScreen/>
+          )}
 
    
     </Box>
