@@ -21,8 +21,8 @@ const terminalGrotesque = localFont({
 })
 
 export const metadata = {
-  title: 'Your App',
-  description: 'With Terminal Grotesque font',
+  title: 'Graphy-t',
+  description: 'Tu savais que si tu réarrange les lettres de "Graphy-t", ça fait "grave autiste"?',
 }
 
 export default function RootLayout({ children }) {
