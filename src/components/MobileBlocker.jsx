@@ -32,9 +32,9 @@ export default function MobileBlocker({ children }) {
         justifyContent: 'center',
         flexDirection: 'column'
       }}>
-        <Box className="centered" style={{ padding: '2rem', height: '50vh', width: '50vw', flexDirection: 'column' }}>
-        <h1 className='glowingText bigText'> La B.U.T.C.H. regrette de vous informer que suite à une brèche de sécurité importante, ses services ne sont disponibles qu'à partir d'un ordinateur ou d'une tablette. Merci de votre coopération.  </h1>
-        <p className='glowingText' style={{fontSize:"2rem"}}>- Les agents de l'unité des communications</p>
+        <Box className="centered" style={{ padding: '2rem', height: '50vh', width: '80vw', flexDirection: 'column' }}>
+        <h1 className='glowingText' style={{fontSize: "2.5vh"}}> La B.U.T.C.H. regrette de vous informer que suite à une brèche de sécurité importante, ses services ne sont disponibles qu'à partir d'un ordinateur ou d'une tablette. Merci de votre coopération.  </h1>
+        <p className='glowingText' style={{fontSize:"1.8vh"}}>- Les agents de l'unité des communications</p>
         </Box>
       </div>
     );
