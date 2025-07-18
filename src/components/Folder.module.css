@@ -1,10 +1,8 @@
-.folder{
-    filter: drop-shadow(-5px -5px 8px var(--terminal-dark-green));
-    transition: 2s cubic-bezier(0.075, 0.82, 0.165, 1)
-
+.folder {
+  filter: drop-shadow(-5px -5px 8px var(--terminal-dark-green));
+  transition: 2s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
-.folder:hover{
+.folder:hover {
   filter: drop-shadow(-5px -5px 10px var(--swag-purple));
-
 }

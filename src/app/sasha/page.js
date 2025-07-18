@@ -5,11 +5,8 @@ import FileBrowser from "@/components/fileBrowser/FileBrowser";
 
 export default function Home() {
   return (
-<>
-
-<FileBrowser />
-  
-</>
-
+    <>
+      <FileBrowser />   
+    </>
   );
 }

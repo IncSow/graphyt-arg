@@ -11,30 +11,27 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-import localFont from 'next/font/local'
+import localFont from "next/font/local";
 import MobileBlocker from "@/components/MobileBlocker";
 
 const terminalGrotesque = localFont({
-  src: '../../fonts/terminal-grotesque.ttf', // adjust the path if needed
-  variable: '--font-terminal-grotesque',
-  display: 'swap',
-})
+  src: "../../fonts/terminal-grotesque.ttf",
+  variable: "--font-terminal-grotesque",
+  display: "swap",
+});
 
 export const metadata = {
-  title: 'Graphy-t',
-  description: 'Tu savais que si tu réarrange les lettres de "Graphy-t", ça fait "grave autiste"?',
-}
+  title: "Graphy-t",
+  description:
+    'Tu savais que si tu réarrange les lettres de "Graphy-t", ça fait "grave autiste"?',
+};
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={terminalGrotesque.variable}>
-      
       <body>
-        <MobileBlocker>
-         {children}
-        </MobileBlocker>
-
-        </body>
+        <MobileBlocker>{children}</MobileBlocker>
+      </body>
     </html>
-  )
+  );
 }
