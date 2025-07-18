@@ -27,7 +27,7 @@ export default function GlitchedImage(props) {
         style={{
           "--glitch-image": `url(${getGlitchImage()})`,
           "--mask-image": `url(${src})`,
-          "--delay": `${Math.random() * 2}s`,
+          "--delay": `-${Math.random() * 2}s`,
           "--duration": `${(Math.random() * 0.6 + 0.6).toFixed(2)}s`,
         }}
       >
