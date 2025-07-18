@@ -20,7 +20,7 @@ export default function FileBrowser(props) {
     { name: "Fursona_Sasha.jpg" },
     { name: "chatong.png" },
   ];
-  const [selectedFile, setSelectedFile] = useState(); // Default to first file
+  const [selectedFile, setSelectedFile] = useState();
   const handleFileSelect = (file) => {
     console.log("Selected file:", file);
     setSelectedFile(file);
