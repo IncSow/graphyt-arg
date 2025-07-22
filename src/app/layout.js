@@ -13,6 +13,7 @@ const geistMono = Geist_Mono({
 
 import localFont from "next/font/local";
 import MobileBlocker from "@/components/MobileBlocker";
+import { ModalProvider } from "@/components/ModalProvider";
 
 const terminalGrotesque = localFont({
   src: "../../fonts/terminal-grotesque.ttf",
@@ -30,7 +31,9 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className={terminalGrotesque.variable}>
       <body>
-        <MobileBlocker>{children}</MobileBlocker>
+        <ModalProvider>
+          <MobileBlocker>{children}</MobileBlocker>
+        </ModalProvider>
       </body>
     </html>
   );
