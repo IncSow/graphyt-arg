@@ -1,10 +1,23 @@
 import Image from "next/image";
 import Box from "../Box";
-
+import AudioPlayer, { RHAP_UI } from 'react-h5-audio-player';
+import styles from "./fileBrowser.module.css";
+import 'react-h5-audio-player/lib/styles.css';
+import { useEffect, useRef } from "react";
 export default function FilePlayer(props) {
   const { fileType, filePath } = props;
+  const scrollRef = useRef(null);
+
+  useEffect(() => {
+    if (scrollRef.current) {
+    console.log("Scroll container height:", scrollRef.current.scrollHeight);
+    scrollRef.current.scrollTop = 0; 
+  }
+  });
+
   return (
     <Box
+      ref={scrollRef}
       style={{
         width: "70%",
         padding: 0,
@@ -38,6 +51,29 @@ export default function FilePlayer(props) {
           allowFullScreen
         />
       )}
+
+      {fileType === "audio" && (
+         <AudioPlayer
+            src={filePath}
+            className={styles.audioPlayer}
+            preload="auto" 
+            style={{ backgroundColor: 'black', marginTop: '30vh', width: '70%', marginLeft: '15%' }}
+            showJumpControls={false}
+            showSkipControls={false}
+            showDownloadProgress={false}
+            customAdditionalControls={[]}
+            layout="stacked"
+            customVolumeControls={[]}
+            customProgressBarSection={
+              [
+                RHAP_UI.CURRENT_TIME,
+                <div>/</div>,
+                RHAP_UI.DURATION,
+                RHAP_UI.PROGRESS_BAR,
+                RHAP_UI.VOLUME,
+                ]
+            }
+          />)}
     </Box>
   );
 }

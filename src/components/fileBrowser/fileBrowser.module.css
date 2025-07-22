@@ -19,3 +19,8 @@
 .fileListElement {
   flex: 1;
 }
+
+.audioPlayer .rhap_main-controls-button {
+  color: var(--terminal-green);
+  background-color: red !important;
+}

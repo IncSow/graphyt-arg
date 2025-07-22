@@ -1,8 +1,26 @@
 .folder {
-  filter: drop-shadow(-5px -5px 8px var(--terminal-dark-green));
+  filter: drop-shadow(-5px -5px 5px var(--terminal-green));
   transition: 2s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
 .folder:hover {
-  filter: drop-shadow(-5px -5px 10px var(--swag-purple));
+  filter: drop-shadow(-5px -5px 5px var(--swag-purple));
+}
+
+.folderWrapper:hover > .folder {
+  filter: drop-shadow(-5px -5px 5px var(--swag-purple));
+}
+
+.folderWrapper:hover > p {
+  -webkit-text-stroke: 1px var(--swag-purple);
+  animation: active-glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes active-glow {
+  0% {
+    text-shadow: 1px 1px 2px var(--swag-purple);
+  }
+  100% {
+    text-shadow: 1px 1px 10px var(--swag-purple);
+  }
 }
