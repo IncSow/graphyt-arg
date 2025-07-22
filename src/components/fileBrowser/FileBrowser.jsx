@@ -5,24 +5,28 @@ import ReturnElement from "./ReturnElement";
 import styles from "./fileBrowser.module.css";
 import FilePlayer from "./FilePlayer";
 import FileListElement from "./FileListElement";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 export default function FileBrowser(props) {
-  const fileList = [
-    { name: "Dessin_secret.jpg", type: "image", path: "/cr_temp.webp" },
-    { name: "Alo_calbard.jpg", type: "image", path: "/grofils.jpg" },
-    { name: "screamie.mp3" },
-    {
-      name: "teaser_ouf.mp4",
-      type: "video",
-      path: "https://www.youtube-nocookie.com/embed/FPsFRFn3dOE?si=4CicxM_str3Blwkh",
-    },
-    { name: "Fursona_Sasha.jpg" },
-    { name: "chatong.png" },
-  ];
+
+  const { title, isAsh, fileList } = props;
+    const preloadImage = (url) => {
+    const img = new Image();
+    img.src = url;
+  };
+
+  useEffect(() => {
+    if (fileList && fileList.length > 0) {
+      fileList.forEach((file) => {
+        if (file.type === "image") {
+          preloadImage(file.path);
+        }
+      });
+    }
+  }, [fileList]);
+
   const [selectedFile, setSelectedFile] = useState();
   const handleFileSelect = (file) => {
-    console.log("Selected file:", file);
     setSelectedFile(file);
   };
 
@@ -32,7 +36,7 @@ export default function FileBrowser(props) {
         margin: 0,
         padding: 0,
         width: "100vw",
-        height: "80vh",
+        height: "95vh",
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
@@ -40,9 +44,9 @@ export default function FileBrowser(props) {
       }}
     >
       <div className={styles.header}>
-        <ReturnElement link="/" />
+        <ReturnElement link={isAsh? "/l4dy": "/n4v3t"} />
         <GlowingText>
-          <h2>Manifique</h2>
+          <h2>{title}</h2>
         </GlowingText>
       </div>
 
@@ -50,7 +54,7 @@ export default function FileBrowser(props) {
         style={{
           padding: 0,
           display: "flex",
-          height: "50vh",
+          height: "70vh",
           width: "70vw",
           overflow: "auto",
         }}

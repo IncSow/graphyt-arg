@@ -33,7 +33,7 @@
 
 body,
 .fullcover {
-  /* background: var(--background); */
+  background: var(--background);
   /* background-image: url("/background.webp"); */
   background-image: url("/background.webp");
   background-size: cover;
@@ -41,20 +41,28 @@ body,
   background-position: center;
   color: var(--foreground);
   font-family: var(--font-terminal-grotesque);
+  max-height: 100vh;
   min-height: 100vh;
+  overflow: hidden;
 }
 
 * {
   font-family: var(--font-terminal-grotesque);
 }
 
-.glowingText {
+.glowingText,
+.glowingTextHoverable {
   color: black;
   -webkit-text-stroke: 1px var(--terminal-green);
   animation: glow 2s ease-in-out infinite alternate;
 }
 
-.glowingText.active {
+.boxHoverable:hover {
+  border-color: var(--swag-purple);
+}
+
+.glowingText.active,
+.glowingTextHoverable:hover {
   -webkit-text-stroke: 1px var(--swag-purple);
   animation: active-glow 2s ease-in-out infinite alternate;
 }
@@ -204,4 +212,67 @@ body,
   height: 100%;
   padding: 2vh;
   cursor: default;
+}
+
+.glowingInput {
+  border: 1px solid var(--terminal-green);
+  height: 50%;
+  width: 60%;
+  padding: 1rem;
+}
+
+.folderCard {
+  padding: 1vw 2vw;
+  border: 1px solid var(--terminal-green);
+  border-bottom: none;
+  width: min-content;
+  background-color: black;
+  position: relative;
+  top: 1px;
+  margin-left: 25vw;
+}
+
+/* Background of the player */
+.rhap_container {
+  background-color: black;
+  color: black !important;
+  -webkit-text-stroke: 1px var(--terminal-green) !important;
+  animation: active-glow 2s ease-in-out infinite alternate !important;
+}
+
+.rhap_time {
+  color: black;
+  -webkit-text-stroke: 1px var(--terminal-green);
+}
+
+/* Main controls: play/pause/skip */
+.rhap_main-controls-button {
+  color: var(--terminal-green) !important;
+}
+.rhap_volume-indicator {
+  background-color: var(--terminal-dark-green) !important;
+}
+.rhap_main-controls-button:hover {
+  color: var(--swag-purple) !important;
+}
+
+/* Volume buttons */
+.rhap_volume-button {
+  color: var(--terminal-green) !important;
+}
+.rhap_volume-button:hover {
+  color: var(--swag-purple) !important;
+}
+
+/* Progress bar background */
+.rhap_progress-indicator,
+.rhap_volume-bar,
+.rhap_progress-filled {
+  background-color: var(--terminal-dark-green) !important;
+}
+
+/* Progress indicator (thumb) */
+.rhap_volume-indicator,
+.rhap_progress-bar {
+  background-color: var(--swag-purple) !important;
 }

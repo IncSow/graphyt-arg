@@ -132,7 +132,7 @@ export default function Home() {
       />
       <a
         style={{ position: "absolute", bottom: "5vh", right: "5vw" }}
-        href="/sasha/"
+        href="/login"
         className="bigText glowingText"
       >
         contact
