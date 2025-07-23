@@ -32,13 +32,18 @@ export default function Home() {
     {
       name: "Video concert.mp4",
       type: "video",
-      path: "https://www.youtube-nocookie.com/embed/FPsFRFn3dOE?si=4CicxM_str3Blwkh",
+      path: "https://www.youtube.com/embed/urSvBUeoUvA?si=y6HhNUM1GsYnXB83",
     },
     {
       name: "Bateau Pirate.jpg",
       type: "image",
       path: "/fileContent/pirateship.png",
     },
+    {
+      name: "Recap tournée.mp4",
+      type: "video",
+      path: "https://www.youtube.com/embed/41MfhjnmAgg?si=H9gOlQJEXUQHmz9q",
+    }
   ];
 
   return (

@@ -35,7 +35,7 @@ export default function Home() {
     {
       name: "Harder daddy.mp4",
       type: "video",
-      path: "/fileContent/maxipouik.jpg",
+      path: "https://www.youtube.com/embed/MeLUJTx_-bk?si=90jwRG77PD4gONFi",
     },
     {
       name: "Tab guitare Sacre.jpg",
