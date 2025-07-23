@@ -20,5 +20,3 @@ export default function ReturnElement(props) {
     </a>
   );
 }
-
-  
