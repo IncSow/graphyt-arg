@@ -12,14 +12,9 @@ export default function Home() {
 
   const fileList = [
     {
-      name: "Demo clip.mp4",
+      name: "L4DYSPH0R14.exe",
       type: "video",
       path: "https://www.youtube.com/embed/d2ZQVVYtCjQ?si=dnruWNZfAkWpT_4m",
-    },
-    {
-      name: "Journal intime.mp3",
-      type: "audio",
-      path: "/fileContent/L4dySphor14.mp3",
     },
     {
       name: "Journal intime.jpg",
