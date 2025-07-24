@@ -1,21 +1,16 @@
-'use client';
+"use client";
 
-import React, {
-  createContext,
-  useContext,
-  useState,
-  useEffect,
-} from 'react';
-import ReactDOM from 'react-dom';
+import React, { createContext, useContext, useState, useEffect } from "react";
+import ReactDOM from "react-dom";
 
 const ModalContext = createContext();
 
 export const ModalProvider = ({ children }) => {
   const [imageUrl, setImageUrl] = useState(null);
-  const [altText, setAltText] = useState('');
+  const [altText, setAltText] = useState("");
   const [resolver, setResolver] = useState(null);
 
-  const showImageModal = (url, alt = 'Modal Image') => {
+  const showImageModal = (url, alt = "Modal Image") => {
     return new Promise((resolve) => {
       setImageUrl(url);
       setAltText(alt);
@@ -34,17 +29,17 @@ export const ModalProvider = ({ children }) => {
   // ESC key to close
   useEffect(() => {
     const handleKeyDown = (e) => {
-      if (e.key === 'Escape' && imageUrl) {
+      if (e.key === "Escape" && imageUrl) {
         closeModal();
       }
     };
 
     if (imageUrl) {
-      window.addEventListener('keydown', handleKeyDown);
+      window.addEventListener("keydown", handleKeyDown);
     }
 
     return () => {
-      window.removeEventListener('keydown', handleKeyDown);
+      window.removeEventListener("keydown", handleKeyDown);
     };
   }, [imageUrl]);
 
@@ -55,20 +50,26 @@ export const ModalProvider = ({ children }) => {
         ReactDOM.createPortal(
           <div className="modal-overlay">
             <img
-                src="/close-button.webp"
-                alt="Close"
-                className="modal-close"
-                onClick={closeModal}/>
+              src="/close-button.webp"
+              alt="Close"
+              className="modal-close"
+              onClick={closeModal}
+            />
 
             <div className="modal-content" onClick={(e) => e.stopPropagation()}>
               <img
                 src={imageUrl}
                 alt={altText}
-                style={{ maxWidth: '85vw', maxHeight: '80vh', width: '100%', objectFit: 'contain' }}
+                style={{
+                  maxWidth: "85vw",
+                  maxHeight: "80vh",
+                  width: "100%",
+                  objectFit: "contain",
+                }}
               />
             </div>
           </div>,
-          document.body
+          document.body,
         )}
     </ModalContext.Provider>
   );
@@ -76,8 +77,8 @@ export const ModalProvider = ({ children }) => {
 
 export const useImageModal = () => {
   const context = useContext(ModalContext);
-//   if (!context) {
-//     throw new Error('useImageModal must be used within a ModalProvider');
-//   }
+  //   if (!context) {
+  //     throw new Error('useImageModal must be used within a ModalProvider');
+  //   }
   return context;
 };

@@ -1,9 +1,10 @@
 import clsx from "clsx";
 import styles from "./Box.module.css";
 export default function Box(props) {
-  const { children, className, style, onClick, ref } = props;
+  const { children, className, style, onClick, ref, id } = props;
   return (
     <div
+      id={id}
       ref={ref}
       onClick={onClick}
       style={style}

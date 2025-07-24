@@ -13,13 +13,6 @@ export default function MobileBlocker({ children }) {
     const isMobileUA =
       /Android|iPhone|iPad|iPod|Opera Mini|IEMobile|WPDesktop/i.test(userAgent);
     const isSmallScreen = window.innerWidth < mobileWidthThreshold;
-    console.log(
-      "User Agent:",
-      userAgent,
-      window.innerWidth,
-      isMobileUA,
-      isSmallScreen,
-    );
     if (isMobileUA || isSmallScreen) {
       setIsMobile(true);
     }
@@ -45,8 +38,8 @@ export default function MobileBlocker({ children }) {
       >
         <Box
           className="centered"
-          style={{  
-             padding: "2rem",
+          style={{
+            padding: "2rem",
             height: "50vh",
             width: "80vw",
             flexDirection: "column",

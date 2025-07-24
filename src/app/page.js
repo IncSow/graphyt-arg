@@ -34,7 +34,7 @@ export default function Home() {
     ];
     const first = popUps.splice(
       Math.floor(Math.random() * popUps.length),
-      1
+      1,
     )[0];
     const second = popUps[Math.floor(Math.random() * popUps.length)];
 
@@ -43,7 +43,6 @@ export default function Home() {
 
   const handleImageClick = async () => {
     await showImageModal(getRandomPopUps()[0], "Glitch Image");
-    console.log("Image modal closed");
   };
 
   return (
