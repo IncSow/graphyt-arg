@@ -43,7 +43,6 @@ export default function Home() {
 
   const handleImageClick = async () => {
     await showImageModal(getRandomPopUps()[0], "Glitch Image");
-    console.log("Image modal closed");
   };
 
   return (

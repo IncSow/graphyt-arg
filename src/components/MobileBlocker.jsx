@@ -13,13 +13,6 @@ export default function MobileBlocker({ children }) {
     const isMobileUA =
       /Android|iPhone|iPad|iPod|Opera Mini|IEMobile|WPDesktop/i.test(userAgent);
     const isSmallScreen = window.innerWidth < mobileWidthThreshold;
-    console.log(
-      "User Agent:",
-      userAgent,
-      window.innerWidth,
-      isMobileUA,
-      isSmallScreen,
-    );
     if (isMobileUA || isSmallScreen) {
       setIsMobile(true);
     }

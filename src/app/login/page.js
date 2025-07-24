@@ -32,7 +32,6 @@ export default function Home() {
     e.preventDefault();
     const key = await hashCredentials(username, password);
     const target = credentialMap[key];
-    console.log("Credentials:", key, "Target:", target);
     if (target) {
       localStorage.setItem(username, key);
       router.push(target);

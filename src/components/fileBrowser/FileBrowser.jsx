@@ -11,9 +11,6 @@ export default function FileBrowser(props) {
   const { title, isAsh, fileList } = props;
   const preloadImage = (url) => {
     const img = new Image();
-    console.log(`Preloading image: ${url}`);
-    img.onload = () => console.log(`Preloaded: ${url}`);
-    img.onerror = () => console.warn(`Failed to preload: ${url}`);
     img.src = url;
   };
 

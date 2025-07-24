@@ -10,7 +10,6 @@ export default function FilePlayer(props) {
 
   useEffect(() => {
     if (scrollRef.current) {
-      console.log("Scroll container height:", scrollRef.current.scrollHeight);
       scrollRef.current.scrollTop = 0;
     }
   });
