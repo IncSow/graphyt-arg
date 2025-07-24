@@ -3,7 +3,7 @@ import Image from "next/image";
 import Folder from "@/components/Folder";
 import Box from "@/components/Box";
 import FileBrowser from "@/components/fileBrowser/FileBrowser";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 
 export default function Home() {
@@ -27,6 +27,13 @@ export default function Home() {
       .map((b) => b.toString(16).padStart(2, "0"))
       .join("");
   }
+
+  useEffect(() => {
+    if (error) {
+      const timer = setTimeout(() => setError(""), 3000);
+      return () => clearTimeout(timer);
+    }
+  }, [error]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -100,10 +107,18 @@ export default function Home() {
               onChange={(e) => setPassword(e.target.value)}
               value={password}
               className="glowingInput"
+              autoComplete="off"
               type="password"
             />
           </div>
-          {error && <p className="glowingText active">{error}</p>}
+          {error && (
+            <Box
+              style={{ position: "absolute", bottom: "10vh" }}
+              className="glowingText active"
+            >
+              {error}
+            </Box>
+          )}
           <button
             type="submit"
             className="glowingText bigText"
