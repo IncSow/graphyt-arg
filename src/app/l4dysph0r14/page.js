@@ -1,21 +1,15 @@
 "use client";
-import Image from "next/image";
-import Folder from "@/components/Folder";
-import Box from "@/components/Box";
-import FileBrowser from "@/components/fileBrowser/FileBrowser";
-import { useRouter } from "next/navigation";
-import { useEffect, useState } from "react";
 import FolderBrowser from "@/components/folderBrowser/FolderBrowser";
 
 export default function Home() {
   const folderList = [
-    { name: "Manifique", isProtected: false },
     {
       name: "Piraterie",
       isProtected: true,
       hashedPassword:
         "109b6507b787aaa359c46dfc98ac1274c0196383f07406d50afa277f6d26b1e6",
     },
+    { name: "Magma", isProtected: false },
     {
       name: "Sacre",
       isProtected: true,
@@ -39,9 +33,9 @@ export default function Home() {
   return (
     <FolderBrowser
       folderList={folderList}
-      title="Nev.e"
-      hashedPassword="4323f71098015c2dbaded5a561477e030188f0999377bfe05ac362d59e4b03a0"
-      accessPath="N4V3T"
+      title="Ash"
+      hashedPassword="5279301020333169ca2767f2dadf225bda0a81d0594af4bcfb40b0af86d4ddaf"
+      accessPath="L4dySph0r14"
     />
   );
 }

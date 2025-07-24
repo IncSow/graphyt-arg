@@ -45,8 +45,8 @@ export default function MobileBlocker({ children }) {
       >
         <Box
           className="centered"
-          style={{  
-             padding: "2rem",
+          style={{
+            padding: "2rem",
             height: "50vh",
             width: "80vw",
             flexDirection: "column",

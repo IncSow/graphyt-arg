@@ -8,10 +8,12 @@ import FileListElement from "./FileListElement";
 import React, { useEffect, useState } from "react";
 
 export default function FileBrowser(props) {
-
   const { title, isAsh, fileList } = props;
-    const preloadImage = (url) => {
+  const preloadImage = (url) => {
     const img = new Image();
+    console.log(`Preloading image: ${url}`);
+    img.onload = () => console.log(`Preloaded: ${url}`);
+    img.onerror = () => console.warn(`Failed to preload: ${url}`);
     img.src = url;
   };
 
@@ -44,7 +46,7 @@ export default function FileBrowser(props) {
       }}
     >
       <div className={styles.header}>
-        <ReturnElement link={isAsh? "/l4dy": "/n4v3t"} />
+        <ReturnElement link={isAsh ? "/l4dysph0r14" : "/n4v3t"} />
         <GlowingText>
           <h2>{title}</h2>
         </GlowingText>

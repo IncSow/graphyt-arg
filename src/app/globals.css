@@ -219,6 +219,14 @@ body,
   height: 50%;
   width: 60%;
   padding: 1rem;
+  cursor: pointer;
+}
+
+.glowingInput:hover {
+  border-color: var(--swag-purple);
+}
+.passwordInput {
+  -webkit-text-security: disc;
 }
 
 .folderCard {
@@ -230,6 +238,7 @@ body,
   position: relative;
   top: 1px;
   margin-left: 25vw;
+  z-index: 1;
 }
 
 /* Background of the player */

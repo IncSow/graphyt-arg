@@ -43,7 +43,7 @@ export default function Home() {
       name: "Recap tournée.mp4",
       type: "video",
       path: "https://www.youtube.com/embed/41MfhjnmAgg?si=H9gOlQJEXUQHmz9q",
-    }
+    },
   ];
 
   return (

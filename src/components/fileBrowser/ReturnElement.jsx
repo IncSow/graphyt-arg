@@ -7,15 +7,18 @@ export default function ReturnElement(props) {
   const { children, style, link } = props;
 
   return (
-    <a className={clsx(styles.returnLink, "glowingText")} href={link}>
+    <a
+      className={clsx(styles.returnLink, "glowingText glowingTextHoverable")}
+      href={link}
+    >
       <GlitchedImage
-        style={{width: "40%"}}
-          src="/icons/return.webp"
-          alt="Retour en arrière"
-          width={200}
-          height={200}
-          glitchType={2}
-        />
+        style={{ width: "40%" }}
+        src="/icons/return.webp"
+        alt="Retour en arrière"
+        width={200}
+        height={200}
+        glitchType={2}
+      />
       Retour
     </a>
   );

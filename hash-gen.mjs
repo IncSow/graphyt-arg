@@ -1,14 +1,16 @@
 // hash-gen.js
-import crypto from 'crypto';
+import crypto from "crypto";
 
 const credentials = {
-  'L4dySph0r14:09012022': '/l4dy',
-  'N4V3T:27052023': 'n4v3t',
+  Veryleakz: "Piraterie",
+  Gr4phyT34m: "Sacre",
+  "05072025": "Assume",
+  crASH: "Burnout",
 };
 
 const hashedMap = {};
 for (const [cred, path] of Object.entries(credentials)) {
-  const hash = crypto.createHash('sha256').update(cred).digest('hex');
+  const hash = crypto.createHash("sha256").update(cred).digest("hex");
   hashedMap[hash] = path;
 }
 
