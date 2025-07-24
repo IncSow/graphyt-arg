@@ -13,7 +13,8 @@ export default function Home() {
   const [error, setError] = useState("");
 
   const credentialMap = {
-    "5279301020333169ca2767f2dadf225bda0a81d0594af4bcfb40b0af86d4ddaf": "/l4dy",
+    "5279301020333169ca2767f2dadf225bda0a81d0594af4bcfb40b0af86d4ddaf":
+      "/l4dysph0r14",
     "4323f71098015c2dbaded5a561477e030188f0999377bfe05ac362d59e4b03a0":
       "/n4v3t",
   };
