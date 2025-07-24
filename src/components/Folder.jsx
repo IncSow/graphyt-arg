@@ -11,6 +11,7 @@ export default function Folder(props) {
         display: "flex",
         width: "40%",
         cursor: "pointer",
+        overflow: "hidden",
         alignItems: "center",
         ...style,
       }}

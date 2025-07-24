@@ -182,7 +182,7 @@ export default function FolderBrowser(props) {
                         : {}
                     }
                   >
-                    <p className="glowingTextHoverable">{folder.name} </p>
+                    <p className="glowingTextHoverable">{folder.name=="Burnout" ? "B̸̢̬̗̯̬͈̥̰̦ͤͭ͛̅̀́̑ͣ͘͜͟͟Ų̴͎̲̝͉ͤ͂ͭ̃ͯ̓R̝̰̤͙ͩͧ̂̂͟N̷̴̨̛̬̳̬͖̙̹̰͈̫̺̯̖͂̊͐̈͒̊ͫ͆̉̏̉́̏̒ͣ̋͜͜͞Ò̴̵̧͕̠͈̼̠̦͍͍͉̳̙͙͉̽̈̊ͫ̎̊ͯ̇̇͛̈́͂̉͐͆͒̚̚̚͜͠UT̤̯͋ͤ͞͠": folder.name } </p>
                   </Folder>
                 ))}
               </div>

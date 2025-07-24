@@ -34,6 +34,8 @@ export default function FilePlayer(props) {
           height={1000}
           style={{
             width: "100%",
+            minHeight: "100%",
+            objectFit: "contain",
             height: "auto",
           }}
         />
