@@ -34,7 +34,7 @@ export default function Home() {
     ];
     const first = popUps.splice(
       Math.floor(Math.random() * popUps.length),
-      1,
+      1
     )[0];
     const second = popUps[Math.floor(Math.random() * popUps.length)];
 
@@ -132,9 +132,17 @@ export default function Home() {
       <a
         style={{ position: "absolute", bottom: "5vh", right: "5vw" }}
         href="/login"
-        className="bigText glowingText"
+        className="bigText glowingTextHoverable"
       >
         contact
+      </a>
+
+      <a
+        style={{ position: "absolute", bottom: "5vh", left: "2vw" }}
+        href="/legal"
+        className="glowingTextHoverable"
+      >
+        Mention légales
       </a>
     </>
   );

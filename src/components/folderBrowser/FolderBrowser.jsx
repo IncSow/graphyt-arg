@@ -13,8 +13,6 @@ export default function FolderBrowser(props) {
   const [selectedFolder, setSelectedFolder] = useState(null);
   const [error, setError] = useState(null);
 
-  // Set SelectedFolder to null when pressing the escape key
-
   const resetSelectedFolder = () => {
     setSelectedFolder(null);
     setPassword("");
@@ -32,6 +30,13 @@ export default function FolderBrowser(props) {
       window.removeEventListener("keydown", handleKeyDown);
     };
   }, []);
+
+  function isNowBefore(dateString) {
+  const now = new Date();
+  const target = new Date(dateString);
+
+  return now < target;
+}
 
   useEffect(() => {
     const storage = localStorage.getItem(accessPath);
@@ -54,6 +59,10 @@ export default function FolderBrowser(props) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if ((await hashText(password)) === selectedFolder.hashedPassword) {
+       if (isNowBefore(selectedFolder?.releaseDate)) {
+        alert("Tu n'es pas sensé déjà avoir accès à ce fichier!")
+        return
+      }
       localStorage.setItem(selectedFolder.name, selectedFolder.hashedPassword);
       handleFolderClick(selectedFolder);
       resetSelectedFolder();
