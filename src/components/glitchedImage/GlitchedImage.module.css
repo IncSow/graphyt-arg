@@ -12,7 +12,7 @@
 }
 
 .glitchedImageWrapper::after {
-  content: "a";
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -35,6 +35,14 @@
     glowPulse 1s ease-in-out infinite,
     hueShift 1s linear infinite;
   animation-delay: var(--delay, 0s);
+}
+
+.glitchedImageWrapper:hover::after {
+  opacity: 0.8;
+  animation:
+    glitchJitter 0.4s steps(3, end) infinite alternate,
+    glowPulse 0.5s ease-in-out infinite,
+    hueShift 0.2s linear infinite;
 }
 
 @keyframes glowPulse {
