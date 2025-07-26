@@ -43,11 +43,11 @@ export default function Home() {
           Le présent site, accessible à l’adresse www.graphy.team, est édité par
           : Graphy-T<br></br>
           SIRET : 924 179 740 00015
-          <br></br>Contact : sasharkamusic@gmail.com
+          <br></br>Contact : graphytea.contact@gmail.com
         </p>
         <h2>2. Responsable de la publication</h2>
         <h3> Graphy-T </h3>
-        <p>Contact : sasharkamusic@gmail.com</p>
+        <p>Contact : graphytea.contact@gmail.com</p>
         <h2>3. Hébergement</h2>
         <p>
           Le site est hébergé par la société Vercel Inc. 340 S Lemon Ave #4133,
