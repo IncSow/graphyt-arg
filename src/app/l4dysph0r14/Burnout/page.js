@@ -5,6 +5,7 @@ import Box from "@/components/Box";
 import FileBrowser from "@/components/fileBrowser/FileBrowser";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
+import styles from "./Burnout.module.css"
 
 export default function Home() {
   const router = useRouter();
@@ -21,5 +22,18 @@ export default function Home() {
     }
   }, []);
 
-  return <>{access && <FileBrowser title="Burnout" isAsh />}</>;
+  return <>{access && <>
+    <div className={styles.fullPage}/>
+    <div className={styles.fullPageGlitch} />
+    <div className="glowingText centered" style={{marginLeft: "20vw", width: "30%", fontSize: "3vw"}}>
+      <h2 style={{fontSize: "6vw", fontWeight: "bold"}}>ERROR 404</h2>
+      <p>Page not found</p>
+      <p> Redirecting now. </p>
+    </div> 
+    <div className="glowingText" style={{display: "flex", flexDirection: "column", position: "absolute", bottom: 0, right: "25vw"}}>
+      <a className="glowingTextHoverable bigText" style={{fontSize: "8vw"}} href="https://youtu.be/_m5uazzvu0g?"> BURNOUT </a>
+      <p style={{fontSize: "2vw", alignSelf: "end"}} >sur toutes les plateformes</p>   
+       
+    </div> 
+    </> }</>;
 }

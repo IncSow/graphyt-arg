@@ -1,0 +1,82 @@
+.fullPage{
+    width: 100vw;
+     height: 100vh; 
+     pointer-events: none;
+     position: absolute;
+     z-index: -2;
+     background: url("/bg.webp")
+}
+
+.fullPageGlitch{
+    width: 100vw;
+     height: 100vh; 
+     pointer-events: none;
+     position: absolute;
+     z-index: 1;
+     background: url("/glitches/glitches.webp")
+}
+/* TODO 2 : LINT THIS FkN code. */
+/* TODO : De-duplicate this code once this is done; this is an awful work. */
+.fullPageGlitch::after{
+    position: absolute;
+      top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+    content: "";
+    background: url("/glitches/glitches.webp");
+    mask-image: url("/glitches/glitches.webp");
+  -webkit-mask-image: url("/glitches/glitches.webp");
+  mask-size: cover;
+  mask-repeat: no-repeat;
+  background-size: 110% 110%;
+  mix-blend-mode: color-burn;
+  -webkit-mask-size: cover;
+  -webkit-mask-repeat: no-repeat;
+  animation:
+    glitchJitter 0.8s steps(3, end) infinite alternate,
+    glowPulse 1s ease-in-out infinite,
+    hueShift 1s linear infinite;
+}
+
+@keyframes glowPulse {
+  0%,
+  100% {
+    opacity: 0.8;
+    filter: brightness(1);
+  }
+  50% {
+    opacity: 1;
+    filter: brightness(1.8);
+  }
+}
+
+@keyframes hueShift {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+  100% {
+    filter: hue-rotate(360deg);
+  }
+}
+
+@keyframes glitchJitter {
+  0% {
+    background-position: 7vh 5vw;
+  }
+  20% {
+    background-position: 12vh 2vw;
+  }
+  40% {
+    background-position: 39vh -3vw;
+  }
+  60% {
+    background-position: -25vh 8vw;
+  }
+  80% {
+    background-position: 5vh -12vw;
+  }
+  100% {
+    background-position: 50vw 9vh;
+  }
+}
