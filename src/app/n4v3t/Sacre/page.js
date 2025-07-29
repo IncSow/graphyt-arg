@@ -8,7 +8,7 @@ export default function Home() {
   const router = useRouter();
   const [access, setAccess] = useState(false);
   useEffect(() => {
-     const agentAccess = localStorage.getItem("N4V3T");
+    const agentAccess = localStorage.getItem("N4V3T");
     const folderAccess = localStorage.getItem("Sacre");
     if (
       agentAccess !==
