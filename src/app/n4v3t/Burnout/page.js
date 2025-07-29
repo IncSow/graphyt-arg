@@ -7,12 +7,21 @@ export default function Home() {
   const router = useRouter();
   const [access, setAccess] = useState(false);
   useEffect(() => {
-    const storage = localStorage.getItem("N4V3T");
+    const agentAccess = localStorage.getItem("N4V3T");
+    const folderAccess = localStorage.getItem("Burnout");
     if (
-      storage !==
+      agentAccess !==
       "4323f71098015c2dbaded5a561477e030188f0999377bfe05ac362d59e4b03a0"
     ) {
       router.replace("/login");
+      return;
+    }
+
+    if (
+      folderAccess !==
+      "2183e6a862db4935b2a2742d7a2f7d978194436a40b3c3635a845a84ee78a710"
+    ) {
+      router.replace("/n4v3t");
     } else {
       setAccess(true);
     }

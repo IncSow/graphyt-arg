@@ -27,7 +27,7 @@ export default function Home() {
       isProtected: true,
       hashedPassword:
         "2183e6a862db4935b2a2742d7a2f7d978194436a40b3c3635a845a84ee78a710",
-        releaseDate: "2025-08-28T00:00:00"
+      releaseDate: "2025-08-28T00:00:00",
     },
   ];
 

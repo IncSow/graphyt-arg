@@ -1,10 +1,9 @@
 "use client";
 import Image from "next/image";
-import Folder from "@/components/Folder";
 import Box from "@/components/Box";
-import FileBrowser from "@/components/fileBrowser/FileBrowser";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
+import { hashText } from "@/lib/HashText";
 
 export default function Home() {
   const [username, setUsername] = useState("");
@@ -19,15 +18,6 @@ export default function Home() {
       "/n4v3t",
   };
 
-  async function hashCredentials(username, password) {
-    const text = `${username}:${password}`;
-    const buffer = new TextEncoder().encode(text);
-    const hashBuffer = await crypto.subtle.digest("SHA-256", buffer);
-    return Array.from(new Uint8Array(hashBuffer))
-      .map((b) => b.toString(16).padStart(2, "0"))
-      .join("");
-  }
-
   useEffect(() => {
     if (error) {
       const timer = setTimeout(() => setError(""), 3000);
@@ -37,7 +27,7 @@ export default function Home() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const key = await hashCredentials(username, password);
+    const key = await hashText(`${username}:${password}`);
     const target = credentialMap[key];
     if (target) {
       localStorage.setItem(username, key);

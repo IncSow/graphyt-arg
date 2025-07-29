@@ -1,7 +1,16 @@
 import styles from "./GlitchedImage.module.css";
 
 export default function GlitchedImage(props) {
-  const { src, alt, width, height, style, imageStyle, glitchType = 1 } = props;
+  const {
+    className,
+    src,
+    alt,
+    width,
+    height,
+    style,
+    imageStyle,
+    glitchType = 1,
+  } = props;
 
   const getGlitchImage = () => {
     switch (glitchType) {

@@ -45,7 +45,7 @@ export default function FileBrowser(props) {
       <div className={styles.header}>
         <ReturnElement link={isAsh ? "/l4dysph0r14" : "/n4v3t"} />
         <GlowingText>
-          <h2>{title === "Burnout"? "B̸̢̬̗̯̬͈̥̰̦ͤͭ͛̅̀́̑ͣ͘͜͟͟Ų̴͎̲̝͉ͤ͂ͭ̃ͯ̓R̝̰̤͙ͩͧ̂̂͟N̷̴̨̛̬̳̬͖̙̹̰͈̫̺̯̖͂̊͐̈͒̊ͫ͆̉̏̉́̏̒ͣ̋͜͜͞Ò̴̵̧͕̠͈̼̠̦͍͍͉̳̙͙͉̽̈̊ͫ̎̊ͯ̇̇͛̈́͂̉͐͆͒̚̚̚͜͠UT̤̯͋ͤ͞͠" : title}</h2>
+          <h2>{title === "Burnout" ? "B̸̢̬̗̯̬͈̥̰̦ͤͭ͛̅̀́̑ͣ͘͜͟͟Ų̴͎̲̝͉ͤ͂ͭ̃ͯ̓R̝̰̤͙ͩͧ̂̂͟N̷̴̨̛̬̳̬͖̙̹̰͈̫̺̯̖͂̊͐̈͒̊ͫ͆̉̏̉́̏̒ͣ̋͜͜͞Ò̴̵̧͕̠͈̼̠̦͍͍͉̳̙͙͉̽̈̊ͫ̎̊ͯ̇̇͛̈́͂̉͐͆͒̚̚̚͜͠UT̤̯͋ͤ͞͠" : title}</h2>
         </GlowingText>
       </div>
 
