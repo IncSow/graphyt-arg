@@ -41,7 +41,7 @@ export default function Home() {
     {
       name: "Harder daddy.mp4",
       type: "video",
-      path: "https://www.youtube.com/embed/MeLUJTx_-bk?si=90jwRG77PD4gONFi",
+      path: "https://www.youtube-nocookie.com/embed/MeLUJTx_-bk?si=90jwRG77PD4gONFi",
     },
     {
       name: "Tab guitare Sacre.jpg",

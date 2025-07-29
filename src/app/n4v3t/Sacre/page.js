@@ -1,7 +1,5 @@
 "use client";
-import Image from "next/image";
-import Folder from "@/components/Folder";
-import Box from "@/components/Box";
+
 import FileBrowser from "@/components/fileBrowser/FileBrowser";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -44,7 +42,7 @@ export default function Home() {
     {
       name: "Harder daddy.mp4",
       type: "video",
-      path: "https://www.youtube.com/embed/MeLUJTx_-bk?si=90jwRG77PD4gONFi",
+      path: "https://www.youtube-nocookie.com/embed/MeLUJTx_-bk?si=90jwRG77PD4gONFi",
     },
   ];
 

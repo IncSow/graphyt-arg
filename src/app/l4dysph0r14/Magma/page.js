@@ -11,7 +11,7 @@ export default function Home() {
     {
       name: "L4DYSPH0R14.exe",
       type: "video",
-      path: "https://www.youtube.com/embed/d2ZQVVYtCjQ?si=dnruWNZfAkWpT_4m",
+      path: "https://www.youtube-nocookie.com/embed/d2ZQVVYtCjQ?si=dnruWNZfAkWpT_4m",
     },
     {
       name: "Journal intime.jpg",
