@@ -8,12 +8,21 @@ export default function Home() {
   const [access, setAccess] = useState(false);
 
   useEffect(() => {
-    const storage = localStorage.getItem("N4V3T");
+    const agentAccess = localStorage.getItem("N4V3T");
+    const folderAccess = localStorage.getItem("Piraterie");
     if (
-      storage !==
+      agentAccess !==
       "4323f71098015c2dbaded5a561477e030188f0999377bfe05ac362d59e4b03a0"
     ) {
       router.replace("/login");
+      return;
+    }
+
+    if (
+      folderAccess !==
+      "109b6507b787aaa359c46dfc98ac1274c0196383f07406d50afa277f6d26b1e6"
+    ) {
+      router.replace("/n4v3t");
     } else {
       setAccess(true);
     }

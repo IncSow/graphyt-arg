@@ -1,31 +1,31 @@
-.fullPage{
-    width: 100vw;
-     height: 100vh; 
-     pointer-events: none;
-     position: absolute;
-     z-index: -2;
-     background: url("/bg.webp")
+.fullPage {
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  position: absolute;
+  z-index: -2;
+  background: url("/bg.webp");
 }
 
-.fullPageGlitch{
-    width: 100vw;
-     height: 100vh; 
-     pointer-events: none;
-     position: absolute;
-     z-index: 1;
-     background: url("/glitches/glitches.webp")
+.fullPageGlitch {
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  position: absolute;
+  z-index: 1;
+  background: url("/glitches/glitches.webp");
 }
 /* TODO 2 : LINT THIS FkN code. */
 /* TODO : De-duplicate this code once this is done; this is an awful work. */
-.fullPageGlitch::after{
-    position: absolute;
-      top: 0;
+.fullPageGlitch::after {
+  position: absolute;
+  top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-    content: "";
-    background: url("/glitches/glitches.webp");
-    mask-image: url("/glitches/glitches.webp");
+  content: "";
+  background: url("/glitches/glitches.webp");
+  mask-image: url("/glitches/glitches.webp");
   -webkit-mask-image: url("/glitches/glitches.webp");
   mask-size: cover;
   mask-repeat: no-repeat;

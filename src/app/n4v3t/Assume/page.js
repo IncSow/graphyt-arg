@@ -26,12 +26,19 @@ export default function Home() {
   ];
 
   useEffect(() => {
-    const storage = localStorage.getItem("N4V3T");
+    const agentAccess = localStorage.getItem("N4V3T");
+    const folderAccess = localStorage.getItem("Assume");
     if (
-      storage !==
+      agentAccess !==
       "4323f71098015c2dbaded5a561477e030188f0999377bfe05ac362d59e4b03a0"
     ) {
       router.replace("/login");
+    }
+    if (
+      folderAccess !==
+      "0dfb07bfba72b73f416bf7ebdec946562ecd7246f3585fdd9c010423748affa0"
+    ) {
+      router.replace("/n4v3t");
     } else {
       setAccess(true);
     }

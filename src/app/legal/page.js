@@ -1,8 +1,4 @@
 "use client";
-import Image from "next/image";
-import GlitchedImage from "@/components/glitchedImage/GlitchedImage";
-import { useImageModal } from "@/components/ModalProvider";
-import { useEffect } from "react";
 import Box from "@/components/Box";
 import { useRouter } from "next/navigation";
 

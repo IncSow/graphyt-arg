@@ -1,7 +1,4 @@
 "use client";
-import Image from "next/image";
-import Folder from "@/components/Folder";
-import Box from "@/components/Box";
 import FileBrowser from "@/components/fileBrowser/FileBrowser";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -11,12 +8,21 @@ export default function Home() {
   const [access, setAccess] = useState(false);
 
   useEffect(() => {
-    const storage = localStorage.getItem("L4dySph0r14");
+    const agentAccess = localStorage.getItem("L4dySph0r14");
+    const folderAccess = localStorage.getItem("Piraterie");
     if (
-      storage !==
+      agentAccess !==
       "5279301020333169ca2767f2dadf225bda0a81d0594af4bcfb40b0af86d4ddaf"
     ) {
       router.replace("/login");
+      return;
+    }
+
+    if (
+      folderAccess !==
+      "109b6507b787aaa359c46dfc98ac1274c0196383f07406d50afa277f6d26b1e6"
+    ) {
+      router.replace("/l4dysph0r14");
     } else {
       setAccess(true);
     }

@@ -1,8 +1,16 @@
-import clsx from "clsx";
 import styles from "./GlitchedImage.module.css";
 
 export default function GlitchedImage(props) {
-  const { className, src, alt, width, height, style, imageStyle, glitchType = 1 } = props;
+  const {
+    className,
+    src,
+    alt,
+    width,
+    height,
+    style,
+    imageStyle,
+    glitchType = 1,
+  } = props;
 
   const getGlitchImage = () => {
     switch (glitchType) {
@@ -24,7 +32,7 @@ export default function GlitchedImage(props) {
   return (
     <div style={{ display: "flex", ...style }}>
       <div
-        className={clsx(styles.glitchedImageWrapper, ...className)}
+        className={styles.glitchedImageWrapper}
         style={{
           "--glitch-image": `url(${getGlitchImage()})`,
           "--mask-image": `url(${src})`,
