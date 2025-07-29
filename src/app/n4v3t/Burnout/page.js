@@ -9,7 +9,6 @@ export default function Home() {
   useEffect(() => {
     const agentAccess = localStorage.getItem("N4V3T");
     const folderAccess = localStorage.getItem("Burnout");
-    console.log(agentAccess, folderAccess);
     if (
       agentAccess !==
       "4323f71098015c2dbaded5a561477e030188f0999377bfe05ac362d59e4b03a0"
