@@ -23,6 +23,10 @@ export default function Home() {
     runDelayedSequence();
   }, []);
 
+  const handleClick = (link) => () => {
+    window.location.href = link;
+  };
+
   const getRandomPopUps = () => {
     const popUps = [
       "/popups/bangarang.webp",
@@ -71,14 +75,16 @@ export default function Home() {
         }}
       >
         <GlitchedImage
-          style={{ flex: 1 }}
+          onClick={handleClick("https://www.youtube.com/@GraphyT_")}
+          style={{ flex: 1, cursor: "pointer" }}
           src="/icons/pause.webp"
           alt="Bouton Pause"
           width={200}
           height={200}
         />
         <GlitchedImage
-          style={{ flex: 1 }}
+          onClick={handleClick("https://www.instagram.com/graphy_t._/?hl=fr")}
+          style={{ flex: 1, cursor: "pointer" }}
           src="/icons/rec.webp"
           alt="Bouton Record"
           width={200}
@@ -86,7 +92,8 @@ export default function Home() {
           glitchType={2}
         />
         <GlitchedImage
-          style={{ flex: 1 }}
+          onClick={handleClick("https://graphy-t.bandcamp.com/album/trash-tag")}
+          style={{ flex: 1, cursor: "pointer" }}
           src="/icons/play.webp"
           alt="bouton Play"
           width={200}
@@ -94,7 +101,8 @@ export default function Home() {
           glitchType={3}
         />
         <GlitchedImage
-          style={{ flex: 1 }}
+          onClick={handleClick("https://www.tiktok.com/@graphy_t")}
+          style={{ flex: 1, cursor: "pointer" }}
           src="/icons/stop.webp"
           alt="bouton Stop"
           width={200}
@@ -112,8 +120,9 @@ export default function Home() {
         glitchType={3}
       />
       <GlitchedImage
+        onClick={handleClick("https://discord.gg/MJkSa8wW8Z")}
         style={{ position: "absolute", bottom: "25vh", right: "0" }}
-        imageStyle={{ width: "100%" }}
+        imageStyle={{ width: "100%", cursor: "pointer" }}
         src="/glitches/glitch2.webp"
         alt="Image de glitch"
         width={200}
@@ -121,8 +130,9 @@ export default function Home() {
         glitchType={2}
       />
       <GlitchedImage
+        onClick={handleClick("https://bfan.link/burn-out-1")}
         style={{ position: "absolute", bottom: "0vh", left: "0vw" }}
-        imageStyle={{ width: "100%" }}
+        imageStyle={{ width: "100%", cursor: "pointer" }}
         src="/gt_warped.webp"
         alt="Logo graphy-t wraped"
         width={200}

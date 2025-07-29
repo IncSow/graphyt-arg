@@ -3,6 +3,7 @@ import styles from "./GlitchedImage.module.css";
 export default function GlitchedImage(props) {
   const {
     className,
+    onClick,
     src,
     alt,
     width,
@@ -41,6 +42,7 @@ export default function GlitchedImage(props) {
         }}
       >
         <img
+          onClick={onClick}
           className="glitchedImage"
           style={imageStyle}
           src={src}

@@ -19,9 +19,9 @@ export default function Home() {
       path: "/fileContent/communique_final_butch.png",
     },
     {
-      name: "Page log sasha.jpg",
-      type: "image",
-      path: "/fileContent/maxipouik.jpg",
+      name: "OBLIVION - Dernier contact L4dysph0r14.mp4",
+      type: "video",
+      path: "https://www.youtube-nocookie.com/embed/en__8YiBA1w?si=gFPJ7hzLigNuryIr",
     },
   ];
 
