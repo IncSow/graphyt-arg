@@ -15,8 +15,6 @@
   z-index: 1;
   background: url("/glitches/glitches.webp");
 }
-/* TODO 2 : LINT THIS FkN code. */
-/* TODO : De-duplicate this code once this is done; this is an awful work. */
 .fullPageGlitch::after {
   position: absolute;
   top: 0;
