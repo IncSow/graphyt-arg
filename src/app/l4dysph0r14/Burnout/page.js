@@ -23,7 +23,7 @@ export default function Home() {
   },[active])
 
   useEffect(() => {
-    if (isNowBefore("2025-08-28T00:00:00")) {
+    if (isNowBefore("2025-08-22T00:00:00")) {
       alert("On ne triche pas ! Petit filou.");
       router.replace("/login");
       return;
