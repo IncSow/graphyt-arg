@@ -2,10 +2,12 @@
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import styles from "./Burnout.module.css";
+import clsx from "clsx";
 
 export default function Home() {
   const router = useRouter();
   const [access, setAccess] = useState(false);
+  const [active, setActive] = useState(false)
 
   function isNowBefore(dateString) {
     const now = new Date();
@@ -13,6 +15,12 @@ export default function Home() {
 
     return now < target;
   }
+
+
+  useEffect(() =>{
+    setTimeout(() => {setActive(!active)}, 700)
+
+  },[active])
 
   useEffect(() => {
     if (isNowBefore("2025-08-28T00:00:00")) {
@@ -48,7 +56,7 @@ export default function Home() {
           <div className={styles.fullPageGlitch} />
           <div
             className="glowingText centered"
-            style={{ marginLeft: "20vw", width: "30%", fontSize: "3vw" }}
+            style={{ marginLeft: "20vw", width: "30%", fontSize: "3vw", flexDirection: "column" }}
           >
             <h2 style={{ fontSize: "6vw", fontWeight: "bold" }}>ERROR 404</h2>
             <p>Page not found</p>
@@ -65,12 +73,11 @@ export default function Home() {
             }}
           >
             <a
-              className="glowingTextHoverable bigText"
+              className={clsx(" glowingText glowingTextHoverable bigText", active? "active" : "")}
               style={{ fontSize: "8vw" }}
               href="https://youtu.be/_m5UazzvU0g?si=ShHwIcU-q7M7emYb"
             >
-              {" "}
-              BURN OUT{" "}
+              BURN OUT
             </a>
             <p style={{ fontSize: "2vw", alignSelf: "end" }}>
               sur toutes les plateformes
