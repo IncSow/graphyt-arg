@@ -68,7 +68,6 @@ export default function FolderBrowser(props) {
         setPassword("");
         setError("Incorrect access code, agent.");
       }
-      console.log(data);
     } catch (error) {
       console.error("Error occurred:", error);
     }
