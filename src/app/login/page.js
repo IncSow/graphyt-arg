@@ -38,10 +38,9 @@ export default function Home() {
       });
 
       const data = await response.json();
-      console.log(data);
       if (data.success) {
         localStorage.setItem(data.redirect, data.token);
-        document.cookie = `${data.redirect}=${data.token}`;
+        document.cookie = `${data.redirect}=${data.token}; Path=/; Secure; SameSite=Lax`;
         router.push(data.redirect);
         return;
       } else {

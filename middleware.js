@@ -37,5 +37,4 @@ export function middleware(request) {
 
 export const config = {
   matcher: ["/l4dysph0r14/:path*", "/n4v3t/:path*"],
-   runtime: 'edge' 
 };
