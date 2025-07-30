@@ -6,9 +6,9 @@ import { use, useEffect, useState } from "react";
 import { hashText } from "@/lib/HashText";
 
 export default function FolderBrowser(props) {
-  const { folderList, title, hashedPassword, accessPath } = props;
+  const { folderList, title, accessPath } = props;
   const router = useRouter();
-  const [access, setAccess] = useState(false);
+  const [access, setAccess] = useState(true);
   const [password, setPassword] = useState("");
   const [selectedFolder, setSelectedFolder] = useState(null);
   const [error, setError] = useState(null);
@@ -38,18 +38,9 @@ export default function FolderBrowser(props) {
     return now < target;
   }
 
-  useEffect(() => {
-    const storage = localStorage.getItem(accessPath);
-    if (storage !== hashedPassword) {
-      router.replace("/login");
-    } else {
-      setAccess(true);
-    }
-  }, []);
-
   const handleFolderClick = (folder) => {
     const localStorageKey = localStorage.getItem(folder.name);
-    if (!folder.isProtected || localStorageKey == folder?.hashedPassword) {
+    if (!folder.isProtected || localStorageKey) {
       router.push(`/${accessPath.toLowerCase()}/${folder.name}`);
       return;
     }
@@ -58,19 +49,30 @@ export default function FolderBrowser(props) {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if ((await hashText(password)) === selectedFolder.hashedPassword) {
-      if (isNowBefore(selectedFolder?.releaseDate)) {
-        alert("Tu n'es pas sensé déjà avoir accès à ce fichier! Petit filou.");
-        return;
+    const folderName = selectedFolder.name;
+    try {
+      const response = await fetch("/api/folder", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ folderName, password, accessPath }),
+      });
+      const data = await response.json();
+      if (data.success) {
+        localStorage.setItem(folderName, data.token);
+        document.cookie = `${folderName}=${data.token}`;
+        handleFolderClick(selectedFolder);
+        resetSelectedFolder();
+      } else {
+        setPassword("");
+        setError("Incorrect access code, agent.");
       }
-      localStorage.setItem(selectedFolder.name, selectedFolder.hashedPassword);
-      handleFolderClick(selectedFolder);
-      resetSelectedFolder();
-    } else {
-      setPassword("");
-      setError("Incorrect access code, agent.");
+    } catch (error) {
+      console.error("Error occurred:", error);
     }
   };
+
   return (
     <>
       {access && (

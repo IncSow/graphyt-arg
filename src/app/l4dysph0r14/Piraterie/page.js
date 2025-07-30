@@ -4,29 +4,7 @@ import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
 export default function Home() {
-  const router = useRouter();
-  const [access, setAccess] = useState(false);
-
-  useEffect(() => {
-    const agentAccess = localStorage.getItem("L4dySph0r14");
-    const folderAccess = localStorage.getItem("Piraterie");
-    if (
-      agentAccess !==
-      "5279301020333169ca2767f2dadf225bda0a81d0594af4bcfb40b0af86d4ddaf"
-    ) {
-      router.replace("/login");
-      return;
-    }
-
-    if (
-      folderAccess !==
-      "109b6507b787aaa359c46dfc98ac1274c0196383f07406d50afa277f6d26b1e6"
-    ) {
-      router.replace("/l4dysph0r14");
-    } else {
-      setAccess(true);
-    }
-  }, []);
+  const access = true;
 
   const fileList = [
     {

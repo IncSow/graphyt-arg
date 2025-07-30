@@ -17,7 +17,6 @@ export const ModalProvider = ({ children }) => {
       setResolver(() => resolve);
     });
   };
-
   const closeModal = () => {
     setImageUrl(null);
     if (resolver) {

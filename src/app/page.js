@@ -11,7 +11,7 @@ export default function Home() {
     const delay = (ms) => new Promise((res) => setTimeout(res, ms));
     const popUps = getRandomPopUps();
     (async () => {
-      const randomDelay = Math.floor(Math.random() * 5000) + 5000; // 5–10s
+      const randomDelay = Math.floor(Math.random() * 5000) + 5000;
       await delay(randomDelay);
       await showImageModal(popUps[0], "Glitch Image 1");
       await delay(randomDelay);
@@ -20,11 +20,23 @@ export default function Home() {
   }
 
   useEffect(() => {
+    checkAndUpdateStorage();
     runDelayedSequence();
   }, []);
 
   const handleClick = (link) => () => {
     window.location.href = link;
+  };
+
+  const appVersion = "2.0";
+
+  const checkAndUpdateStorage = () => {
+    const storedVersion = localStorage.getItem("appVersion");
+
+    if (storedVersion !== appVersion) {
+      localStorage.clear();
+      localStorage.setItem("storageVersion", appVersion);
+    }
   };
 
   const getRandomPopUps = () => {

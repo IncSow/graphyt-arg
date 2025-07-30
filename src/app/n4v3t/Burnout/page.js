@@ -4,28 +4,7 @@ import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
 export default function Home() {
-  const router = useRouter();
-  const [access, setAccess] = useState(false);
-  useEffect(() => {
-    const agentAccess = localStorage.getItem("N4V3T");
-    const folderAccess = localStorage.getItem("Burnout");
-    if (
-      agentAccess !==
-      "4323f71098015c2dbaded5a561477e030188f0999377bfe05ac362d59e4b03a0"
-    ) {
-      router.replace("/login");
-      return;
-    }
-
-    if (
-      folderAccess !==
-      "2183e6a862db4935b2a2742d7a2f7d978194436a40b3c3635a845a84ee78a710"
-    ) {
-      router.replace("/n4v3t");
-    } else {
-      setAccess(true);
-    }
-  }, []);
+  const access = true;
 
   const fileList = [
     { name: "v̶̡̯ͥ̆ͪ̚_̴̡̡̺͖͓͓̪̝͉̱̼̬͎̳̗ͤ̂̇̀̅͆͑̊ͤ̓ͮ͘̕͜ḭ̷̩̦̲͍̘̒ͪ̒͐̽ͥ͒̚̕s̵̈́͋̐ṷ̵̷̷̧̡̫̼̥̱̲̜͕́ͥ̅̎̐̑ͫ̽ͩ̎̃͘͡͠͡_̨̬̲̐ͤͦ̀͐e̶͎̊ͤl̨̢̞̙̗̭͖͖̺̟̫͎̞̦͙̓͗ͬ̏ͧ̇̒͂̅͒̑͆ͪͣ͟͡͡.png", type: "image", path: "/fileContent/bo1.jpg" },

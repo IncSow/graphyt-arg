@@ -4,9 +4,7 @@ import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
 export default function Home() {
-  const router = useRouter();
-  const [access, setAccess] = useState(false);
-
+  const access = true;
   const fileList = [
     {
       name: "Message vocal L4DYSPHOR14.mp3",
@@ -24,18 +22,6 @@ export default function Home() {
       path: "/fileContent/jdbneve.png",
     },
   ];
-
-  useEffect(() => {
-    const storage = localStorage.getItem("N4V3T");
-    if (
-      storage !==
-      "4323f71098015c2dbaded5a561477e030188f0999377bfe05ac362d59e4b03a0"
-    ) {
-      router.replace("/login");
-    } else {
-      setAccess(true);
-    }
-  }, []);
 
   return <>{access && <FileBrowser fileList={fileList} title="Manifique" />}</>;
 }
