@@ -27,14 +27,16 @@ export function middleware(request) {
   const subRouteToken = ROUTE_TOKEN_MAP[subroute];
   if (subroute && subRouteToken) {
     const tokenValue = request.cookies.get(subroute)?.value;
-    if (!tokenValue == subRouteToken) {
-      return NextResponse.redirect(new URL(agentName, request.url));
+    if (tokenValue == subRouteToken) {
+      return NextResponse.next();
     }
+    return NextResponse.redirect(new URL(agentName, request.url));
   }
-
   return NextResponse.next();
+
 }
 
 export const config = {
-  matcher: ["/l4dysph0r14/:path*", "/n4v3t/:path*"],
+  matcher: ["/l4dysph0r14", "/l4dysph0r14/:path*", "/n4v3t", "/n4v3t/:path*"],
 };
+
