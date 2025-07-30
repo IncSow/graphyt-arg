@@ -20,11 +20,23 @@ export default function Home() {
   }
 
   useEffect(() => {
+    checkAndUpdateStorage();
     runDelayedSequence();
   }, []);
 
   const handleClick = (link) => () => {
     window.location.href = link;
+  };
+
+  const appVersion = "2.0";
+
+  const checkAndUpdateStorage = () => {
+    const storedVersion = localStorage.getItem("appVersion");
+
+    if (storedVersion !== appVersion) {
+      localStorage.clear();
+      localStorage.setItem("storageVersion", appVersion);
+    }
   };
 
   const getRandomPopUps = () => {
