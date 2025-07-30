@@ -66,7 +66,7 @@ export default function Home() {
                 active ? "active" : "",
               )}
               style={{ fontSize: "8vw" }}
-              href="https://youtu.be/_m5UazzvU0g?si=ShHwIcU-q7M7emYb"
+              href="/"
             >
               BURN OUT
             </a>
