@@ -27,13 +27,28 @@ export default function Home() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const key = await hashText(`${username}:${password}`);
-    const target = credentialMap[key];
-    if (target) {
-      localStorage.setItem(username, key);
-      router.push(target);
-    } else {
-      setError("Invalid credentials");
+
+    try {
+      const response = await fetch("/api/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ username, password }),
+      });
+
+      const data = await response.json();
+      console.log(data);
+      if (data.success) {
+        localStorage.setItem(data.redirect, data.token);
+        document.cookie = `${data.redirect}=${data.token}`;
+        router.push(data.redirect);
+        return;
+      } else {
+        setError("Invalid credentials");
+      }
+    } catch {
+      setError("Something bad happened.");
     }
   };
 

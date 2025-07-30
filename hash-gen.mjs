@@ -2,10 +2,12 @@
 import crypto from "crypto";
 
 const credentials = {
-  Veryleakz: "Piraterie",
-  Gr4phyT34m: "Sacre",
-  "05072025": "Assume",
-  crASH: "Burnout",
+  VeryleakzSALTY: "Piraterie",
+  Gr4phyT34mSALTY: "Sacre",
+  "05072025SALTY": "AssumeSALTY",
+  crASHSALTY: "BurnoutSALTY",
+  "09012022SALTY": "l4dy",
+  "27052023SALTY": "N4V3T",
 };
 
 const hashedMap = {};

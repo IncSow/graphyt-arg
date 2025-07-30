@@ -28,24 +28,7 @@ export default function Home() {
       router.replace("/login");
       return;
     }
-    const agentAccess = localStorage.getItem("L4dySph0r14");
-    const folderAccess = localStorage.getItem("Burnout");
-    if (
-      agentAccess !==
-      "5279301020333169ca2767f2dadf225bda0a81d0594af4bcfb40b0af86d4ddaf"
-    ) {
-      router.replace("/login");
-      return;
-    }
-
-    if (
-      folderAccess !==
-      "2183e6a862db4935b2a2742d7a2f7d978194436a40b3c3635a845a84ee78a710"
-    ) {
-      router.replace("/l4dysph0r14");
-    } else {
-      setAccess(true);
-    }
+    setAccess(true);
   }, []);
 
   return (
