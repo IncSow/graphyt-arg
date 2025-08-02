@@ -2,6 +2,7 @@
 
 import React, { createContext, useContext, useState, useEffect } from "react";
 import ReactDOM from "react-dom";
+import AudioFilePlayer from "./fileBrowser/AudioFilePlayer";
 
 const ModalContext = createContext();
 
@@ -9,6 +10,9 @@ export const ModalProvider = ({ children }) => {
   const [imageUrl, setImageUrl] = useState(null);
   const [altText, setAltText] = useState("");
   const [resolver, setResolver] = useState(null);
+  const [userInput, setUserInput] = useState(new Array(8).fill(0))
+  const [codeCorrect, setCodeCorrect] = useState(false)
+  const konami = [38,38,40,40,37,39,37,39]
 
   const showImageModal = (url, alt = "Modal Image") => {
     return new Promise((resolve) => {
@@ -19,18 +23,36 @@ export const ModalProvider = ({ children }) => {
   };
   const closeModal = () => {
     setImageUrl(null);
+    setUserInput(new Array(8).fill(0))
+    setCodeCorrect(false)
     if (resolver) {
       resolver();
       setResolver(null);
     }
   };
 
-  // ESC key to close
+  const isKonami = (arr) => {
+    return arr.every( (v,i) =>{ return v == konami[i]}  )
+  }
+
+  useEffect( () => {
+    if(isKonami(userInput)){
+      setCodeCorrect(true)
+    }
+  },[userInput])
+
   useEffect(() => {
     const handleKeyDown = (e) => {
       if (e.key === "Escape" && imageUrl) {
         closeModal();
+        return
       }
+     setUserInput(prev => {
+      const updated = [...prev.slice(1), e.keyCode];
+      return updated;
+    });
+
+
     };
 
     if (imageUrl) {
@@ -56,7 +78,7 @@ export const ModalProvider = ({ children }) => {
             />
 
             <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-              <img
+              {!codeCorrect &&(<img
                 src={imageUrl}
                 alt={altText}
                 style={{
@@ -65,7 +87,8 @@ export const ModalProvider = ({ children }) => {
                   width: "100%",
                   objectFit: "contain",
                 }}
-              />
+              />)}
+              {codeCorrect && (<AudioFilePlayer filePath={"/fileContent/meow_meow_v2.mp3"} />)}
             </div>
           </div>,
           document.body,
