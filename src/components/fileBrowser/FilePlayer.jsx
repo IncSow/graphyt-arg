@@ -1,8 +1,5 @@
 import Image from "next/image";
 import Box from "../Box";
-import AudioPlayer, { RHAP_UI } from "react-h5-audio-player";
-import styles from "./fileBrowser.module.css";
-import "react-h5-audio-player/lib/styles.css";
 import { useEffect, useRef } from "react";
 import AudioFilePlayer from "./AudioFilePlayer";
 export default function FilePlayer(props) {
