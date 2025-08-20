@@ -9,12 +9,12 @@ export default function Home() {
   const [access, setAccess] = useState(false);
   const [active, setActive] = useState(false);
 
-  function isNowBefore(dateString) {
-    const now = new Date();
-    const target = new Date(dateString);
+  // function isNowBefore(dateString) {
+  //   const now = new Date();
+  //   const target = new Date(dateString);
 
-    return now < target;
-  }
+  //   return now < target;
+  // }
 
   useEffect(() => {
     setTimeout(() => {
@@ -23,11 +23,12 @@ export default function Home() {
   }, [active]);
 
   useEffect(() => {
-    if (isNowBefore("2025-08-22T00:00:00")) {
-      alert("On ne triche pas ! Petit filou.");
-      router.replace("/login");
-      return;
-    }
+    // Removing this code to make sure it works on release, tomorrow, just in case.
+    // if (isNowBefore("2025-08-22T00:00:00")) {
+    //   alert("On ne triche pas ! Petit filou.");
+    //   router.replace("/login");
+    //   return;
+    // }
     setAccess(true);
   }, []);
 
@@ -63,10 +64,10 @@ export default function Home() {
             <a
               className={clsx(
                 " glowingText glowingTextHoverable bigText",
-                active ? "active" : "",
+                active ? "active" : ""
               )}
               style={{ fontSize: "8vw" }}
-              href="/"
+              href="https://youtu.be/_m5UazzvU0g?si=ShHwIcU-q7M7emYb"
             >
               BURN OUT
             </a>
